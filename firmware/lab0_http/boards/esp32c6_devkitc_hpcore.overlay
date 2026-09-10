@@ -7,9 +7,18 @@
 #include <zephyr/dt-bindings/led/led.h>
 
 / {
+	chosen {
+		zephyr,console = &usb_serial;
+		zephyr,shell-uart = &usb_serial;
+	};
+
 	aliases {
 		led-strip = &led_strip;
 	};
+};
+
+&usb_serial {
+	status = "okay";
 };
 
 &i2s_default {

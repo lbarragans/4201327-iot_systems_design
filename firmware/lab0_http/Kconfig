@@ -1,14 +1,26 @@
 mainmenu "Lab 0 - Minimal IoT Implementation (HTTP)"
 
-config LAB_WIFI_SSID
+config STA_SAMPLE_SSID
 	string "Wi-Fi SSID"
 	default "changeme"
 	help
 	  Name of the 2.4 GHz network the node joins. The ESP32-C6 radio does
 	  not associate with 5 GHz-only APs.
 
-config LAB_WIFI_PSK
+config STA_SAMPLE_PASSWORD
 	string "Wi-Fi password"
 	default "changeme"
+
+config LAB_HTTP_SERVER_ADDR
+	string "HTTP server address"
+	default "192.168.1.77"
+
+config LAB_HTTP_SERVER_PORT
+	int "HTTP server port"
+	default 8000
+
+config LAB_HTTP_PATH
+	string "HTTP request path"
+	default "/"
 
 source "Kconfig.zephyr"
